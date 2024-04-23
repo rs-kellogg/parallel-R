@@ -8,3 +8,8 @@ dependencies:
   - r-furrr
   - r-tictoc
   - rstudio
+
+# module load mamba
+# mamba env create -f r_parallel.yml
+# source activate r_parallel
+# source activate /kellogg/software/envs/r_parallel
