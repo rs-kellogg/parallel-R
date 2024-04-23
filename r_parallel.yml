@@ -1,0 +1,10 @@
+name: r_parallel
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - r-base=4.2.0
+  - r-tidyverse
+  - r-furrr
+  - r-tictoc
+  - rstudio
