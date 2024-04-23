@@ -1,5 +1,5 @@
 #################
-# parallel-r Repo
+# parallel-R Repo
 #################
 This repo provides instructions and sample code for parallelizing R scripts on KLC.  You'll find:
 
