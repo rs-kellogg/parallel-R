@@ -18,7 +18,7 @@ pwd
 module list
 
 # search for a module
-module load R
+module avail R
 
 # load a module
 module load R/4.2.0
@@ -53,4 +53,4 @@ nano sample.R
 (save changes: Control + x, Yes, Enter)
 
 # clone materials from git repo
-git clone https://github.com/rs-kellogg/parallel-r-demo
+git clone https://github.com/rs-kellogg/parallel-R
