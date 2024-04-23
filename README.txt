@@ -1,4 +1,6 @@
-# parallel-r-demo
+#################
+# parallel-r Repo
+#################
 This repo provides instructions and sample code for parallelizing R scripts on KLC.  You'll find:
 
 1.) cheat_sheet.txt
