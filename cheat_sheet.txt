@@ -1,0 +1,56 @@
+###################
+# KLC Cheat Sheet #
+###################
+---------------
+URLS
+---------------
+KLC Instructions: https://www.kellogg.northwestern.edu/academics-research/research-support/computing/kellogg-linux-cluster.aspx
+
+Cyberduck: https://cyberduck.io/
+
+---------------
+LINUX COMMANDS
+----------------
+# find present working directory
+pwd
+
+# check modules loaded
+module list
+
+# search for a module
+module load R
+
+# load a module
+module load R/4.2.0
+
+# launch Rstudio
+rstudio
+
+# launch an Rscript
+Rscript sample.R
+
+# load a package manager
+module load mamba
+
+# create a conda env with the yaml file
+mamba env create -f r_parallel.yml
+
+# activate your own conda env
+source activate r_parallel
+
+# activate the conda env Research Support made
+source activate /kellogg/software/envs/r_parallel
+
+# exit a conda env
+source deactivate r_parallel
+
+# check processes running on a node
+top
+(Control + c to exit out of this command)
+
+# nano text editor
+nano sample.R
+(save changes: Control + x, Yes, Enter)
+
+# clone materials from git repo
+git clone https://github.com/rs-kellogg/parallel-r-demo
