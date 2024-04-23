@@ -14,6 +14,12 @@ LINUX COMMANDS
 # find present working directory
 pwd
 
+# clone materials from git repo
+git clone https://github.com/rs-kellogg/parallel-R
+
+# navigate into directory
+cd parallel-R
+
 # check modules loaded
 module list
 
@@ -52,5 +58,4 @@ top
 nano sample.R
 (save changes: Control + x, Yes, Enter)
 
-# clone materials from git repo
-git clone https://github.com/rs-kellogg/parallel-R
+
