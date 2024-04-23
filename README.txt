@@ -2,7 +2,7 @@
 This repo provides instructions and sample code for parallelizing R scripts on KLC.  You'll find:
 
 1.) cheat_sheet.txt
-This text document provides all the web pages shown and the linux commands covered in the demo
+This text document provides all the web pages and the linux commands covered in the demo.
 
 2.) time_trial.R
 An R file that parallelizes sleep times over the number of cores you request
