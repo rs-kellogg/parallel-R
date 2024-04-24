@@ -11,5 +11,5 @@ dependencies:
 
 # module load mamba
 # mamba env create -f r_parallel.yml
-# source activate r_parallel
-# source activate /kellogg/software/envs/r_parallel
+# mamba activate r_parallel
+# mamba activate /kellogg/software/envs/r_parallel
