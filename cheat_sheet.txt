@@ -43,12 +43,18 @@ mamba env create -f r_parallel.yml
 
 # activate your own conda env
 conda activate r_parallel
+# OR
+mamba activate r_parallel
 
 # activate the conda env Research Support made
 conda activate /kellogg/software/envs/r_parallel
+# OR
+mamba deactivate /kellogg/software/envs/r_parallel
 
 # exit a conda env
-conda deactivate r_parallel
+conda deactivate
+# OR
+mamba deactivate
 
 # check processes running on a node
 top
