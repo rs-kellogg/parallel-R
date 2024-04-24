@@ -42,13 +42,13 @@ module load mamba
 mamba env create -f r_parallel.yml
 
 # activate your own conda env
-source activate r_parallel
+conda activate r_parallel
 
 # activate the conda env Research Support made
-source activate /kellogg/software/envs/r_parallel
+conda activate /kellogg/software/envs/r_parallel
 
 # exit a conda env
-source deactivate r_parallel
+conda deactivate r_parallel
 
 # check processes running on a node
 top
