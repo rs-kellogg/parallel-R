@@ -45,14 +45,12 @@ module load cuda/11.8.0-gcc-12.3.0
 -------------------
 RUNNING THE SCRIPT
 -------------------
-
 # to run the file
 Rscript matrix_product.R
 
 -------------------
 MONITOR PROCESSES
 -------------------
-
 # check processes running on node
 ssh <node_name> # run this from a new KLC session to get into that same GPU node
 module load mamba
