@@ -41,7 +41,7 @@ module load mamba
 # create a conda env with the yaml file
 mamba env create -f r_parallel.yml
 
-# activate your own conda env
+# activate your own conda env (note that you will need to run conda init or mamba init once before using these)
 conda activate r_parallel
 # OR
 mamba activate r_parallel
@@ -58,6 +58,7 @@ mamba deactivate
 
 # check processes running on a node
 top
+top -u <your_netID> -i -c # use this for a more precise view
 (Control + c to exit out of this command)
 
 # nano text editor
