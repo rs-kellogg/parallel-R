@@ -17,6 +17,7 @@ LINUX COMMANDS
 pwd
 
 # clone materials from git repo
+module load git/2.37.2
 git clone https://github.com/rs-kellogg/parallel-R
 
 # navigate into directory and cpu subfolder
@@ -48,7 +49,10 @@ conda activate r_parallel
 # OR
 mamba activate r_parallel
 
-# activate the conda env Research Support made
+# activate the conda env Research Support made without running mamba/conda init
+eval "$('/hpc/software/mamba/24.3.0/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+source "/hpc/software/mamba/24.3.0/etc/profile.d/mamba.sh"
+
 conda activate /kellogg/software/envs/r_parallel
 # OR
 mamba deactivate /kellogg/software/envs/r_parallel
