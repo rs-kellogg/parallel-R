@@ -34,13 +34,17 @@ Rscript -e "torch::install_torch()"
 
 # ---- Future Runs ----
 
+# load mamba package manager
 module load mamba
+
+# if you have never run 'mamba init', you can use these instead.  
+eval "$('/hpc/software/mamba/24.3.0/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+source "/hpc/software/mamba/24.3.0/etc/profile.d/mamba.sh"
 
 mamba activate r_gpu_env OR
 mamba activate /kellogg/software/envs/r_gpu_env # for our shared env
 
 module load cuda/11.8.0-gcc-12.3.0
-
 
 -------------------
 RUNNING THE SCRIPT
