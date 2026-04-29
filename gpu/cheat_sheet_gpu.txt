@@ -1,0 +1,62 @@
+# KLC GPU Cheat Sheet #
+#######################
+
+-------------------------------------
+Interactive Session on a KLC GPU Node
+-------------------------------------
+# NUIT provides guidance on accessing GPU nodes here: https://rcdsdocs.it.northwestern.edu/systems/quest/user-guide/gpu/gpu.html 
+
+srun --partition=kellogg --account=kellogg --nodes=1 --ntasks-per-node=1 --gres=gpu:a100:1 --mem=30G --time=1:00:00 --pty bash -l
+
+------------------------
+SETTING UP THE CONDA ENV
+------------------------
+# Since the software and packages in this environment require dependencies to be installed before running, we'll forego the .yml file
+
+# ---- Initial Setup Only ----
+
+# initial setup steps 
+module load mamba
+mamba create -n r_gpu_env r-base=4.4.0 r-rstudio-desktop -c conda-forge -y
+mamba activate r_gpu_env
+
+# load the compatible CUDA module
+module load cuda/11.8.0-gcc-12.3.0 # you need to load a compatible CUDA module for the node
+
+# install R packages
+Rscript -e "install.packages('remotes', repos='https://cloud.r-project.org')"
+Rscript -e "remotes::install_version('torch', version = '0.12.0', repos='https://cloud.r-project.org')"
+Rscript -e "install.packages('tictoc', repos='https://cloud.r-project.org')"
+
+# pre-download the Libtorch binaries
+Rscript -e "torch::install_torch()"
+
+# ---- Future Runs ----
+
+module load mamba
+
+mamba activate r_gpu_env OR
+mamba activate /kellogg/software/envs/r_gpu_env # for our shared env
+
+module load cuda/11.8.0-gcc-12.3.0
+
+
+-------------------
+RUNNING THE SCRIPT
+-------------------
+
+# to run the file
+Rscript matrix_product.R
+
+-------------------
+MONITOR PROCESSES
+-------------------
+
+# check processes running on node
+ssh <node_name> # run this from a new KLC session to get into that same GPU node
+module load mamba
+mamba activate /kellogg/software/envs/r_gpu_env
+nvitop # type 'q' to quit the command
+
+
+
