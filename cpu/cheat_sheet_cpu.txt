@@ -69,7 +69,7 @@ conda activate r_parallel
 # activate the env Research Support shared with you
 conda activate /kellogg/software/envs/r_parallel
 # OR
-mamba deactivate /kellogg/software/envs/r_parallel
+mamba activate /kellogg/software/envs/r_parallel
 
 # exit a conda env
 conda deactivate
