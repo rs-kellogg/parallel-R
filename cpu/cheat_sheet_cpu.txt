@@ -16,12 +16,7 @@ LINUX COMMANDS
 # find present working directory
 pwd
 
-# clone materials from git repo
-module load git/2.37.2
-git clone https://github.com/rs-kellogg/parallel-R
-
-# navigate into directory and cpu subfolder
-cd parallel-R/cpu
+# ---- run R on KLC ----
 
 # check modules loaded
 module list 
@@ -38,21 +33,40 @@ rstudio
 # launch an Rscript
 Rscript sample.R
 
-# load a package manager
+# --- get class materials ----
+
+# clone materials from git repo
+module load git/2.37.2
+git clone https://github.com/rs-kellogg/parallel-R
+
+# navigate into directory and cpu subfolder
+cd parallel-R/cpu
+
+# ---- create an isolated conda env for your project ----
+
+# install a package manager
 module load mamba
 
-# create a conda env with the yaml file
+# use a yaml or recipe file to install all packages at once
 mamba env create -f r_parallel.yml
 
-# activate your own conda env (note that you will need to run conda init or mamba init once before using these)
-conda activate r_parallel
-# OR
-mamba activate r_parallel
 
-# activate the conda env Research Support made without running mamba/conda init
+# ---- activate an env ----
+# activate the env with mamba or conda
+mamba init 
+# OR
+conda init
+
+# activate the conda env without running mamba/conda init today
 eval "$('/hpc/software/mamba/24.3.0/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 source "/hpc/software/mamba/24.3.0/etc/profile.d/mamba.sh"
 
+# activate your env
+mamba activate r_parallel 
+# OR
+conda activate r_parallel
+
+# activate the env Research Support shared with you
 conda activate /kellogg/software/envs/r_parallel
 # OR
 mamba deactivate /kellogg/software/envs/r_parallel
@@ -61,6 +75,8 @@ mamba deactivate /kellogg/software/envs/r_parallel
 conda deactivate
 # OR
 mamba deactivate
+
+# ---- monitor your code ----
 
 # check processes running on a node 
 top
